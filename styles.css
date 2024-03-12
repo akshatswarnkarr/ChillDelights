@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  font-family: Arial;
+}
+
+html{
+  scroll-padding-top: 120px;
+}
+
+body{
+  background: linear-gradient(45deg,rgb(41, 22, 22),rgb(115, 61, 61));
+}
+.head{
+  text-transform: uppercase;
+  animation: 0.2s 5 both flicker;
+}
+
+@keyframes flicker{
+  from{    
+    text-shadow: 0 0 0 rgba(255,255,255,0.4);
+  }
+  to{    
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+  }
+}
+
+header{
+  position: sticky;
+  top: 0;
+  flex-direction: column;
+  display: flex;  
+  justify-content: space-around;
+  gap: 5px;
+  text-align: center;
+  background-color: #1c1414;
+  padding: 25px;
+  color: #FFFFFF;
+  z-index: 10;
+}
+.navbar{
+  display: flex;  
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar a{
+  color: #FFFFFF;
+  text-decoration: none;
+  background: none;
+}
+.carousel{
+  height: 80vh;
+  width: 80vw;
+  margin: 10 auto;
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5); 
+  
+}
+.promo{
+  height: calc(100vh-70px);
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+#product-section{
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15vw;
+}
+
+.prod{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #120505;
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+.fadeIn{
+  animation: fade 1s both;
+}
+/** Keyframes **/
+
+@keyframes fade{
+  from{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.prod:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(100,0, 50,0.5); 
+}
+.prod img{
+  height: 200px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.prod p{
+  color: #ebb7b7;
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.prod .add-btn{
+  padding: 10px;
+  background-color: #a61c3a;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.prod .add-btn:hover{
+  background-color: #d9254c;
+}
+#about{
+  margin: 5px auto;
+  padding: 20px;
+  width: 90vw;
+  background-color: #120505;
+  border-radius: 20px;
+  color: white;
+}
+
+#about h1{
+  text-align: center;
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+footer{
+  background-color: black;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.contact{
+  padding: 20px;
+}
